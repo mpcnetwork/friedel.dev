@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="nl" x-data="{ dark: false }" :class="dark ? 'dark' : ''">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Friedel — Full‑Stack Developer Portfolio</title>
+    <meta name="description" content="Portfolio van Friedel, full-stack developer: projecten, skills, testimonials, en contact.">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Lightbox.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"/>
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- Section Styles -->
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: rgba(15,18,36,0.8); backdrop-filter: blur(8px);">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <span class="logo-dot"></span>Friedel.dev
+        </a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item"><a class="nav-link" href="#about">Over</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projecten</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                <li class="nav-item"><a class="nav-link" href="#timeline">Traject</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item ms-lg-3">
+                    <button class="btn btn-outline-accent px-3" @click="dark = !dark">
+                        <i :class="dark ? 'bi bi-sun-fill me-1' : 'bi bi-moon-stars-fill me-1'"></i>
+                        <span x-text="dark ? 'Light' : 'Dark'"></span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="gradient-hero py-5">
+    <div class="container py-5">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <div class="glass p-4 p-lg-5">
+                    <h1 class="display-5 fw-bold hero-title animate__animated animate__fadeInDown">Full‑Stack Developer...</h1>
+                    <p class="lead mt-3 hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Ik bouw schaalbare, veilige web-applicaties met focus op clean code, architectuur, en gebruikerservaring.</p>
+                    <div class="d-flex gap-3 mt-4 hero-cta-group">
+                        <a href="#projects" class="btn btn-accent btn-lg">Bekijk projecten</a>
+                        <a href="#contact" class="btn btn-outline-accent btn-lg">Plan een kennismaking</a>
+                    </div>
+                    <div class="hero-chips">
+                        <span class="chip animate__animated animate__fadeInLeft">JavaScript</span>
+                        <span class="chip animate__animated animate__fadeInLeft animate__delay-1s">Vue.js</span>
+                        <span class="chip animate__animated animate__fadeInLeft animate__delay-2s">Bootstrap</span>
+                        <span class="chip animate__animated animate__fadeInLeft animate__delay-3s">Alpine.js</span>
+                        <span class="chip animate__animated animate__fadeInLeft animate__delay-4s">Laravel</span>
+                        <span class="chip animate__animated animate__fadeInLeft animate__delay-5s">REST APIs</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="glass p-4 svg-container">
+                    <div class="ratio ratio-16x9 rounded" style="overflow:hidden;">
+                        <!-- Local hero image (replaces external Unsplash URL). See `src/img/hero-img.svg` -->
+                        <img src="img/friedel.jpg" alt="Developer" style="object-fit: cover; width: 100%; height: 100%;">
+                    </div>
+                    <p class="small mt-3 mb-0">Van idee tot productie: gedisciplineerde releases, duidelijke naming, en testbare modules.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- About -->
+<section id="about" class="py-5">
+    <div class="container">
+        <h2 class="section-title mb-3">Over Friedel</h2>
+        <p>
+            Ik ben een nieuwsgierige, creatieve full‑stack developer uit Roeselare die houdt van duidelijke structuren, visuele denkoefeningen
+            en pragmatische architectuur. Ik combineer front‑end finesse met back‑end robuustheid, en zet AI‑tools in om sneller tot
+            betrouwbare oplossingen te komen. Teamleden waarderen mijn rust, documentatie‑discipline en liefde voor begrijpelijke code.
+        </p>
+        <div class="row g-4 mt-2">
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Wat typeert mij</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle me-2 accent"></i>Heldere naming & separation of concerns</li>
+                            <li><i class="bi bi-check-circle me-2 accent"></i>Event‑driven en modulair denken</li>
+                            <li><i class="bi bi-check-circle me-2 accent"></i>Documentatie die teams vooruithelpt</li>
+                            <li><i class="bi bi-check-circle me-2 accent"></i>Visuele demo’s en bruikbare UI‑patronen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Stack & tools</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6 class="fw-bold">Front‑end</h6>
+                                <ul class="mb-3">
+                                    <li>HTML5, CSS3, Bootstrap, Tailwind</li>
+                                    <li>JavaScript, Alpine.js, Vue.js</li>
+                                    <li>Responsiveness, UI patterns, accessibility</li>
+                                    <li>Build tooling: npm, Vite</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="fw-bold">Back‑end</h6>
+                                <ul class="mb-3">
+                                    <li>PHP (OOP), Laravel (MVC)</li>
+                                    <li>REST APIs, authentication, security</li>
+                                    <li>Databases & SQL, migrations, seeding</li>
+                                    <li>Testing, queues, caching</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="divider my-3"></div>
+                        <p class="mb-0">
+                            Praktisch ingesteld: BYOD‑setup, degelijke IDE‑config, en een workflow die remote‑ en klaswerk combineert zonder frictie.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="py-5">
+    <div class="container">
+        <h2 class="section-title mb-4 animate__animated animate__slideInDown">Kernskills</h2>
+        <div class="row g-4 skills-grid">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 skill-card animate__animated animate__fadeInUp">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-columns-gap me-2"></i><h6 class="mb-0 fw-bold">Front‑end fundamentals</h6>
+                        </div>
+                        <p class="small">Semantische HTML, moderne CSS, en JavaScript‑interacties met een focus op UX, snelheid en consistentie.</p>
+                        <div class="progress" role="progressbar" aria-valuenow="90"><div class="progress-bar" style="width:90%"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 skill-card animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-diagram-3 me-2"></i><h6 class="mb-0 fw-bold">Architectuur & patterns</h6>
+                        </div>
+                        <p class="small">ES modules, eventbus, pub/sub, MVC; gericht op schaalbaarheid en teamleesbaarheid.</p>
+                        <div class="progress"><div class="progress-bar" style="width:88%"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 skill-card animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-server me-2"></i><h6 class="mb-0 fw-bold">Back‑end & APIs</h6>
+                        </div>
+                        <p class="small">Laravel, REST, auth, SQL; solide data‑modellering, beveiliging en performance.</p>
+                        <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 skill-card animate__animated animate__fadeInUp animate__delay-3s">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-shield-lock me-2"></i><h6 class="mb-0 fw-bold">Quality & security</h6>
+                        </div>
+                        <p class="small">Automated checks, clean code, threat modeling, secure defaults en audit‑vriendelijke logging.</p>
+                        <div class="progress"><div class="progress-bar" style="width:82%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-5">
+    <div class="container">
+        <h2 class="section-title mb-4 animate__animated animate__slideInRight">Projecten</h2>
+        <div class="row g-4 projects-grid">
+            <div class="col-md-6">
+                <div class="card project-card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h5 class="card-title">Event‑Driven Dashboard</h5>
+                            <span class="chip">Vue + Alpine</span>
+                        </div>
+                        <p>Realtime dashboard met pub/sub eventbus. Modules communiceren via duidelijke topics; UI blijft responsief en gefocust.</p>
+                        <ul class="small">
+                            <li>ES Modules, composables voor data‑feeds</li>
+                            <li>REST endpoints + SSE voor live updates</li>
+                            <li>Role‑based access en audit trails</li>
+                        </ul>
+                        <div class="d-flex gap-2 mt-2">
+                            <a class="btn btn-outline-accent btn-sm" href="#">Code</a>
+                            <a class="btn btn-accent btn-sm" href="#">Live demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card project-card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h5 class="card-title">Laravel API met Front‑end UI</h5>
+                            <span class="chip">Laravel + Bootstrap</span>
+                        </div>
+                        <p>Clean REST API, documentatie met OpenAPI, en een Bootstrap‑UI die best practices voor forms en tables demonstreert.</p>
+                        <ul class="small">
+                            <li>OOP controllers, services, repositories</li>
+                            <li>JWT auth, rate limiting, CSRF‑bescherming</li>
+                            <li>Migrations, seeders, feature tests</li>
+                        </ul>
+                        <div class="d-flex gap-2 mt-2">
+                            <a class="btn btn-outline-accent btn-sm" href="#">Code</a>
+                            <a class="btn btn-accent btn-sm" href="#">API docs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card project-card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h5 class="card-title">UX Patterns Library</h5>
+                            <span class="chip">Bootstrap + Tailwind</span>
+                        </div>
+                        <p>Herbruikbare componenten met states, accessibility‑notities en performance tips. Klaar voor design‑systems.</p>
+                        <ul class="small">
+                            <li>Accordeons, modals, toasts, skeletons</li>
+                            <li>ARIA‑labels, focus management</li>
+                            <li>Design tokens & theming</li>
+                        </ul>
+                        <div class="d-flex gap-2 mt-2">
+                            <a class="btn btn-outline-accent btn-sm" href="#">Storybook</a>
+                            <a class="btn btn-accent btn-sm" href="#">Docs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card project-card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h5 class="card-title">Data‑intensieve app</h5>
+                            <span class="chip">SQL + Caching</span>
+                        </div>
+                        <p>Optimalisaties met indexing, N+1‑preventie, queue‑processing en slimme caching voor hoge doorvoer.</p>
+                        <ul class="small">
+                            <li>Explain‑plans en performance budgets</li>
+                            <li>Queue workers en retries</li>
+                            <li>Observability: traces, metrics, logs</li>
+                        </ul>
+                        <div class="d-flex gap-2 mt-2">
+                            <a class="btn btn-outline-accent btn-sm" href="#">Code</a>
+                            <a class="btn btn-accent btn-sm" href="#">Performance report</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" class="py-5">
+    <div class="container">
+        <h2 class="section-title mb-4 gallery-title animate__animated animate__zoomIn">Galerij</h2>
+        <div class="gallery-grid">
+            <!-- Local gallery images (SVG placeholders) -->
+            <a href="img/desk.png" data-lightbox="portfolio" data-title="Full-Stack Development"><img src="img/desk.png" class="gallery-item" alt="Development"></a>
+            <a href="img/hexie.gif" data-lightbox="portfolio" data-title="Web Design & UX"><img src="img/hexie.gif" class="gallery-item" alt="Design"></a>
+            <a href="img/teachernormal.gif" data-lightbox="portfolio" data-title="Architecture & Planning"><img src="img/teachernormal.gif" class="gallery-item" alt="Planning"></a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Testimonials -->
+<section id="testimonials" class="py-5">
+    <div class="container">
+        <h2 class="section-title mb-4 animate__animated animate__slideInLeft">Testimonials</h2>
+        <div class="row g-4 testimonials-grid">
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <!-- Local avatar images to avoid external hotlinking; files in `src/img/` -->
+                            <img alt="Lucas" src="img/avatar-1.svg" class="rounded-circle me-3 testimonial-avatar" width="48" height="48">
+                            <div>
+                                <strong>Lucas</strong><div class="small">Front‑end developer</div>
+                            </div>
+                        </div>
+                        <p>“Friedel werkt in kleine teams bijzonder efficiënt: hij stelt scherpe vragen en documenteert helder. Daardoor stijgt onze kwaliteit en snelheid.”</p>
+                        <div class="small text-secondary">Project: Event‑Driven Dashboard</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img alt="Elisabeth" src="img/avatar-2.svg" class="rounded-circle me-3 testimonial-avatar" width="48" height="48">
+                            <div>
+                                <strong>Elisabeth</strong><div class="small">Projectmanager</div>
+                            </div>
+                        </div>
+                        <p>“Heldere scope, voorspelbare releases en respect voor UX. Zijn API‑documentatie was precies wat ons team nodig had.”</p>
+                        <div class="small text-secondary">Project: Laravel API + UI</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img alt="Mentor" src="img/avatar-3.svg" class="rounded-circle me-3 testimonial-avatar" width="48" height="48">
+                            <div>
+                                <strong>Mentor</strong><div class="small">Tech lead</div>
+                            </div>
+                        </div>
+                        <p>“Sterk in architectuur en naming. Hij vermijdt over‑engineering en kiest patronen die het team begrijpt en kan onderhouden.”</p>
+                        <div class="small text-secondary">Project: UX Patterns Library</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline -->
+<section id="timeline" class="py-5">
+    <div class="container">
+        <h2 class="section-title mb-4 animate__animated animate__slideInDown">Traject & mijlpalen</h2>
+        <div class="row g-4 timeline-grid">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="fw-bold">Front‑end fase</h5>
+                        <ul class="small">
+                            <li>HTML, CSS, JS fundamentals; responsieve UI’s</li>
+                            <li>Frameworks: Bootstrap, Tailwind, Vue</li>
+                            <li>Architectuur: modules, eventbus, componenten</li>
+                            <li>Security en REST‑integraties</li>
+                        </ul>
+                        <span class="chip">Sep — Jan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="fw-bold">Back‑end fase</h5>
+                        <ul class="small">
+                            <li>Databases & SQL, data‑modellering</li>
+                            <li>PHP OOP en Laravel MVC</li>
+                            <li>Security, REST, projectmanagement</li>
+                            <li>Stage 160u + eindproef</li>
+                        </ul>
+                        <span class="chip">Jan — Jun</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-info mt-4">
+            <i class="bi bi-lightning-charge-fill me-2"></i>
+            Diploma: Front‑end & Back‑end getuigschriften; bij Succesvol Ondernemer ook Full Stack Developer diploma (VLAIO‑erkend).
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <h2 class="section-title mb-4 animate__animated animate__slideInUp">Contact & samenwerking</h2>
+        <div class="row g-4 contact-grid">
+            <div class="col-lg-7">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Naam</label>
+                                    <input type="text" class="form-control" placeholder="Je naam">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">E‑mail</label>
+                                    <input type="email" class="form-control" placeholder="naam@bedrijf.be">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Bericht</label>
+                                    <textarea class="form-control" rows="4" placeholder="Waar kan ik mee helpen?"></textarea>
+                                </div>
+                                <div class="col-12 d-flex gap-2">
+                                    <button type="submit" class="btn btn-accent">Verstuur</button>
+                                    <button type="reset" class="btn btn-outline-accent">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="small mt-3 mb-0">Ik antwoord doorgaans binnen 1–2 werkdagen.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="fw-bold">Samenwerkingsvormen</h5>
+                        <ul class="small">
+                            <li>Freelance of projectbasis</li>
+                            <li>Architectuur review & refactoring</li>
+                            <li>Component libraries & design‑systems</li>
+                            <li>API‑ontwerp en documentatie</li>
+                            <li>Security & performance audits</li>
+                        </ul>
+                        <div class="divider my-3"></div>
+                        <h6 class="fw-bold">Locatie</h6>
+                        <p class="small mb-0">Roeselare, Vlaanderen • Remote‑vriendelijk • Nederlands/Engels</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-4">
+    <div class="container text-center">
+        <div class="small">© <span x-text="new Date().getFullYear()"></span> Friedel.dev — Design • Code • Ship</div>
+    </div>
+</footer>
+<script>
+    // Alpine.js data is already in the head tag
+    // Initialize Lightbox with better configuration
+    if (typeof lightbox !== 'undefined') {
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'showImageNumberLabel': false
+        });
+    }
+</script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Lightbox JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<!-- Main Application Script -->
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>

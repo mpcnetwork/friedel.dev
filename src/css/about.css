@@ -1,0 +1,96 @@
+/* About Section Styles */
+
+#about h2 {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+#about p {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-cards {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.about-card {
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent) !important;
+}
+
+.about-list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    animation: slideInLeft 0.6s ease-out backwards;
+}
+
+.about-list-item:nth-child(1) { animation-delay: 0.1s; transition-delay: 0.1s; }
+.about-list-item:nth-child(2) { animation-delay: 0.2s; transition-delay: 0.2s; }
+.about-list-item:nth-child(3) { animation-delay: 0.3s; transition-delay: 0.3s; }
+.about-list-item:nth-child(4) { animation-delay: 0.4s; transition-delay: 0.4s; }
+
+.about-list-item:hover {
+    padding-left: 1.5rem;
+    transform: translateX(5px);
+}
+
+.about-list-item i {
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-right: 0.75rem;
+}
+
+.stack-column h6 {
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.stack-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.stack-column li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.95rem;
+}
+
+.stack-column li:last-child {
+    border-bottom: none;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-cards {
+        flex-direction: column;
+    }
+}

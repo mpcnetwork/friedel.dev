@@ -1,0 +1,11 @@
+.skeleton {
+    background: #e2e3e5;
+    border-radius: 4px;
+    min-height: 18px;
+    animation: pulse 1s infinite;
+}
+@keyframes pulse {
+    0% { opacity: .7; }
+    50% { opacity: 1; }
+    100% { opacity: .7; }
+}
